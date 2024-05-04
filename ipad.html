@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Lundbeck</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <style>
       .bg{
         width:100%;
@@ -24,7 +24,7 @@
     
     <img src="Img/ipad.jpg" class="bg"/>
     <textarea class="mytext" cols="60" rows="15" placeholder="Enter your text here..."></textarea>
-    <button onClick="updateQuestion"></button>
+    <button onClick="updateQuestion">SUBMIT</button>
     <script>
     function updateQuestion(){
         $.ajax({url: "api/config.php", data: {action:"new",question:"abc"}, success: function(result){
