@@ -36,7 +36,7 @@
     
     <img src="Img/ipad.jpg" class="bg"/>
     <textarea class="mytext" cols="60" rows="15" placeholder="Enter your question here..."></textarea>
-    <button onClick="updateQuestion();" class="submit-button">SUBMIT</button>
+    <button onClick="updateQuestion();" class="submit-button">SEND</button>
     <script>
     function updateQuestion(){
         $.ajax({url: "api/config.php", data: {action:"new",question:$(".mytext").val()}, success: function(result){
