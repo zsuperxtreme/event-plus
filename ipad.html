@@ -41,6 +41,7 @@
     function updateQuestion(){
         $.ajax({url: "api/config.php", data: {action:"new",question:"abc"}, success: function(result){
           window.alert("Question added to the main screen");
+          $(".mytext").html("");
         }});
     }
       
