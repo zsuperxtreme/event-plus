@@ -27,7 +27,9 @@
     
     <script>
     $(document).ready(function() {
-
+        $.ajax({url: "api/config.php", data: {action:"new",question:$(".mytext").val()}, success: function(result){
+          window.alert("Question added to the main screen");
+        }});
     });
     </script>
   </body>
