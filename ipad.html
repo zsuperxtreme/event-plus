@@ -24,7 +24,7 @@
     
     <img src="Img/ipad.jpg" class="bg"/>
     <textarea class="mytext" cols="60" rows="15" placeholder="Enter your text here..."></textarea>
-    <button onClick="updateQuestion">SUBMIT</button>
+    <button onClick="updateQuestion();">SUBMIT</button>
     <script>
     function updateQuestion(){
         $.ajax({url: "api/config.php", data: {action:"new",question:"abc"}, success: function(result){
