@@ -1,10 +1,10 @@
 <?php
 
-$conn = mysql_connect('43.239.233.248',
-  'zack', 
-  '110681' 
-) or die(mysql_error());
-mysql_select_db('misc');
+$conn = mysqli_connect('43.239.233.248',
+'zack', // username
+'110681' // password
+) or die(mysqli_error());
+mysqli_select_db($conn,'misc');
 
 $action     = $_REQUEST["action"];
 $question   = $_REQUEST["question"];
@@ -20,29 +20,8 @@ if($action == "new")
         )
     ";
 
-    mysql_query($sql, $conn);
-}
-
-if($action == "list")
-{
-    $sql = "SELECT * FROM player ORDER BY id DESC";	        
-    $result = mysql_query($sql, $conn);
-    while($row = mysql_fetch_assoc($result))
-    {
-        $data[] = array(
-            "id" => $row["id"],
-            "user" => $row["user"],
-            "datetime" => $row["datetime"]
-        );
-    }
-
-    echo json_encode($data, JSON_PRETTY_PRINT);
+    $result = mysqli_query($conn,$sql);
 }
 
 
-if($action == "delete")
-{
-    $sql = "DELETE FROM player WHERE id=$id";	        
-    mysql_query($sql, $conn);
-}
 ?>
