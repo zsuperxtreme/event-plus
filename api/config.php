@@ -24,4 +24,20 @@ if($action == "new")
 }
 
 
+if($action == "list")
+{
+    $sql = "SELECT * FROM lundbeck ORDER BY id DESC";	        
+    $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_assoc($result))
+    {
+        $data[] = array(
+            "id" => $row["id"],
+            "answer" => $row["answer"]
+        );
+    }
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+}
+
+
 ?>
